@@ -5,13 +5,7 @@ var nowMoment = moment().format("dddd, MMMM Do");
 var eDisplayMoment = $("currentDay");
 eDisplayMoment.innerHTML = nowMoment;
 
-// var currentTime = moment().format("H");
-// console.log(moment());
-// if (currentTime > "18:59:59" && currentTime < "20:00:00") {
-//   "#seven" === ".present";
-// }
-
-var rows = document.getElementsByClassName("row");
+var rows = document.getElementsByClass("input-box");
 var currentTime = parseInt(moment().format("H"));
 
 Array.from(rows).forEach((row) => {
@@ -37,3 +31,6 @@ Array.from(rows).forEach((row) => {
 function setColor(element, color) {
   element.style.backgroundColor = color;
 }
+var highScores = localStorage.getItem("highScores")
+  ? JSON.parse(localStorage.getItem("highScores"))
+  : [];
